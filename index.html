@@ -17,30 +17,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
  <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8LBFMT"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
- 
- 1231823123123123
-function getParam(keyName)
-{
-    //获取参数串
-    var query = window.location.search.substring(1);
-    console.log("query :", query);
-    
-    //将参数以&分割
-    var params = query.split("&");
-    console.log("params :", params);
-    
-    //获取具体参数值
-    for (var i=0;i<params.length;i++) {
-        var compare = params[i].split("=");
-        if(compare[0] == keyName) {
-            return compare[1];
-        }
-    }
-    return false ;
-}
-console.log(getParam("appId"));             
-                                       
+<!-- End Google Tag Manager (noscript) -->                                       
 
 </body>
 </html>
