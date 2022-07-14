@@ -19,27 +19,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
  
-function GetRequest() {
-    var url = location.search; //获取url中"?"符后的字串
-    var theRequest = new Object();
-    if (url.indexOf("?") != -1) {
-        var str = url.substr(1);
-        strs = str.split("&");
-        for(var i = 0; i < strs.length; i ++) {
-            theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+function getParam(keyName)
+{
+    //获取参数串
+    var query = window.location.search.substring(1);
+    console.log("query :", query);
+    
+    //将参数以&分割
+    var params = query.split("&");
+    console.log("params :", params);
+    
+    //获取具体参数值
+    for (var i=0;i<params.length;i++) {
+        var compare = params[i].split("=");
+        if(compare[0] == keyName) {
+            return compare[1];
         }
     }
-    return theRequest;
+    return false ;
 }
-var Request = new Object();
-Request = GetRequest();
-// var 参数1,参数2,参数3,参数N;
-// 参数1 = Request['参数1'];
-// 参数2 = Request['参数2'];
-// 参数3 = Request['参数3'];
-// 参数N = Request['参数N'];
-customerid=request["key1"] 
-customeremail=request["key2"]                                       
+console.log(getParam("appId"));                           
                                        
 
 </body>
